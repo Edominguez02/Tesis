@@ -4,7 +4,7 @@ Created on Thu Oct  1 12:15:46 2020
 
 @author: erika
 """
-#ejemplo de peces, cuando C no es actualizado en B
+#ejemplo de vacantes, cuando C no es actualizado en B
 #cuando S esta en B la recompensa final
 #es la diferen. de la funcion recom. menos el costo acumu.
 import numpy as np
@@ -22,7 +22,7 @@ def paro(pi,S,alpha,sumS):
     fun1=recompensa(len(S))
     fun2=recompensa(len(S)+1)
     Pbarra=np.sum(pi)-sumS#representa la suma de las prob de los que no estan en S
-    #si Pbarra es cero ya tenemos todos los tipos de peces
+    #si Pbarra es cero ya tenemos todos los tipos de puestos
     #print("Pbarra: ")
     #print(Pbarra)
     num=alpha*Pbarra
@@ -37,7 +37,7 @@ def paro(pi,S,alpha,sumS):
         return 1# pues si la suma es cero debe detenerse
     
 
-def buscar(u,alpha,N):#retorna i, el tipo de pez capturado
+def buscar(u,alpha,N):#retorna i, el tipo de puesto solicitado
     for k in np.arange(1,N+1):
         if((u>=((k-1)*alpha)/N)and (u<(k*alpha/N))):
             return k
@@ -55,13 +55,13 @@ print("alpha= ")
 print(alpha)
 
 pi=np.zeros((1,N+1))#hacemos 31 espacios para dejar el primero vacio
-#se tienen tipos del 1 hasta N
+#se tienen puestos del 1 hasta N
 #la primera entrada es con k=0
 
 for k in np.arange(1,N+1):#en el ciclo se disminuyen las operaciones 
     pi[0,k] = 1/N
 
-#S vector de tipos de peces distintos
+#S vector de tipos de puestos distintos
 S=[]
 rew=[]#servira para graficar, asi tiene
 rew.append(recompensa(len(S))-0.5)
@@ -69,8 +69,8 @@ rew.append(recompensa(len(S))-0.5)
 
 aux=0
 ban=0
-sumS=0#esta suma acumulara cada probabilidad del pez que fue capturado
-i=N+1 #asi al inicio N no puede estar en peces capturados
+sumS=0#esta suma acumulara cada probabilidad del puesto que fue solicitado
+i=N+1 #asi al inicio N no puede estar en puestos solicitados
 elegido=0
 safek=0
 tope=150
