@@ -25,7 +25,9 @@ finita M ∈ Z+, de esta manera, el espacio de estados es X = {0, 1, 2, . . . , 
 demanda excede la cantidad de producto existente, se paga una penalización y no hay
 pedidos pendientes.
 Se establece:
+
 h ≡ Costo de almacenaje por unidad.
+
 p ≡ Costo de penalización (deuda de producto)
 b ≡ costo de producción
 
@@ -35,7 +37,9 @@ C(Xt, At, ξt) = bAt + h m ́ax{0, Xt + At − ξt+1} + p m ́ax{0, −Xt − At
 
 Se requiere el costo total esperado para 6 etapas,la distribución de la
 demanda está dada en la siguiente tabla
+
 k  0  1   2   3   4   5
+
 pk 0 0.1 0.1 0.3 0.3 0.2
 
 A(x) = {0, 1, . . . , 5 − x} ∀x ∈ X,
